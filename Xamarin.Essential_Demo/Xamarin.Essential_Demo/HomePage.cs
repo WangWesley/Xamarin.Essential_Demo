@@ -17,7 +17,7 @@ namespace Xamarin.Essential_Demo
         EmailDemo f10;
         FileSysHelperDemo f11;
         FlashLightDemo f12;
-      //  Geocoding f13;
+        //  Geocoding f13;
         GeolocationDemo f14;
         GyroscopeDemo f15;
         LauncherDemo f16;
