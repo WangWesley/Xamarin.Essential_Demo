@@ -26,7 +26,7 @@ namespace Xamarin.Essential_Demo
         BrowserDemo f20;
         OrientationSensorDemo f21;
         PhoneDialerDemo f22;
-        //PreferencesDemo f23;
+        PreferencesDemo f23;
         SecureStorageDemo f24;
         ShareDemo f25;
         SmsDemo f26;
@@ -179,10 +179,10 @@ namespace Xamarin.Essential_Demo
                     if (f22 == null) { f22 = new PhoneDialerDemo(); }
                     this.Detail = f22;
                     break;
-                //case "Preferences":
-                //    if (f23 == null) { f23 = new PreferenceDemo(); }
-                //    this.Detail = f23;
-                //    break;
+                case "Preferences":
+                    if (f23 == null) { f23 = new PreferencesDemo(); }
+                    this.Detail = f23;
+                    break;
                 case "Secure Storage":
                     if (f24 == null) { f24 = new SecureStorageDemo(); }
                     this.Detail = f24;

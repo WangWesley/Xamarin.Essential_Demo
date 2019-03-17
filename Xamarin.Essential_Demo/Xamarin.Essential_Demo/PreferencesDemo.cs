@@ -1,15 +1,15 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
 using Xamarin.Essentials;
-using System.IO;
 
 namespace Xamarin.Essential_Demo
 {
-    public class SecureStorageDemo : ContentPage
+	public class PreferencesDemo : ContentPage
     {
         private string content;
         private string key;
@@ -22,7 +22,7 @@ namespace Xamarin.Essential_Demo
         private Button removeKey;
         private Button removeAllKeys;
         private Label result;
-        public SecureStorageDemo()
+        public PreferencesDemo()
         {
             entry_content = new EntryCell { Label = "Content you want to save:", Placeholder = "Enter value here" };
             entry_key = new EntryCell { Label = "Key", Placeholder = "not neccessarily needed" };
@@ -68,7 +68,7 @@ namespace Xamarin.Essential_Demo
 
         private void RemoveAllKeys_Clicked(object sender, EventArgs e)
         {
-            SecureStorage.RemoveAll();
+            Preferences.Clear();
             this.result.Text = "remove all keys: True";
         }
 
@@ -78,7 +78,7 @@ namespace Xamarin.Essential_Demo
             bool result = false;
             if (!string.IsNullOrWhiteSpace(key))
             {
-                result = SecureStorage.Remove(key);
+                Preferences.Remove(key);
                 this.result.Text = "remove key: " + result.ToString();
             }
             else
@@ -87,12 +87,12 @@ namespace Xamarin.Essential_Demo
             }
         }
 
-        private async void RetrieveWithoutKey_Clicked(object sender, EventArgs e)
+        private void RetrieveWithoutKey_Clicked(object sender, EventArgs e)
         {
             try
             {
-                var oauthToken = await SecureStorage.GetAsync(key);
-                result.Text = oauthToken;
+                var value = Preferences.Get(key, "The value for this key does not exist.");
+                result.Text = value;
             }
             catch (Exception ex)
             {
@@ -100,15 +100,15 @@ namespace Xamarin.Essential_Demo
             }
         }
 
-        private async void RetrieveWithKey_Clicked(object sender, EventArgs e)
+        private void RetrieveWithKey_Clicked(object sender, EventArgs e)
         {
             string key = entry_key.Text;
             if (!string.IsNullOrWhiteSpace(key))
             {
                 try
                 {
-                    var oauthToken = await SecureStorage.GetAsync(key);
-                    result.Text = oauthToken;
+                    var value = Preferences.Get(key, "The value for this key does not exist.");
+                    result.Text = value;
                 }
                 catch (Exception ex)
                 {
@@ -117,7 +117,7 @@ namespace Xamarin.Essential_Demo
             }
         }
 
-        private async void SaveWithoutKey_Clicked(object sender, EventArgs e)
+        private void SaveWithoutKey_Clicked(object sender, EventArgs e)
         {
             string content = this.entry_content.Text;
             // generate a random string.
@@ -128,7 +128,7 @@ namespace Xamarin.Essential_Demo
             {
                 try
                 {
-                    await SecureStorage.SetAsync(key, content);
+                    Preferences.Set(key, content);
                     result.Text = "Saving succeeded!";
                 }
                 catch (Exception ex)
@@ -140,7 +140,7 @@ namespace Xamarin.Essential_Demo
             }
         }
 
-        private async void SaveWithKey_ClickedAsync(object sender, EventArgs e)
+        private void SaveWithKey_ClickedAsync(object sender, EventArgs e)
         {
             string content = this.entry_content.Text;
             string key = this.entry_key.Text;
@@ -149,7 +149,7 @@ namespace Xamarin.Essential_Demo
             {
                 try
                 {
-                    await SecureStorage.SetAsync(key, content);
+                    Preferences.Set(key, content);
                     result.Text = "Saving succeeded!";
                 }
                 catch (Exception ex)
@@ -160,5 +160,5 @@ namespace Xamarin.Essential_Demo
                 this.key = key;
             }
         }
-    }
+	}
 }
