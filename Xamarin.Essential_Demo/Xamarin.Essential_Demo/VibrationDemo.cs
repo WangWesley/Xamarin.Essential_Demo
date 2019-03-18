@@ -51,11 +51,13 @@ namespace Xamarin.Essential_Demo
             }
             catch (FeatureNotSupportedException ex)
             {
-                result.Text = "Feature not supported";
+                result.Text = ex.ToString();
+                Console.WriteLine(ex);
             }
             catch (Exception ex)
             {
-                result.Text = "Other error has occurred";
+                result.Text = ex.ToString();
+                Console.WriteLine(ex);
             }
         }
     }

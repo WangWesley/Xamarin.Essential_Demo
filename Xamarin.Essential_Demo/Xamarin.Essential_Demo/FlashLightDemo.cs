@@ -62,14 +62,17 @@ namespace Xamarin.Essential_Demo
             catch (FeatureNotSupportedException fnsEx)
             {
                 // Handle not supported on device exception
+                Console.WriteLine(fnsEx);
             }
             catch (PermissionException pEx)
             {
-                // Handle permission exception
+                // Handle permission exception  
+                Console.WriteLine(pEx);
             }
             catch (Exception ex)
             {
                 // Unable to turn on/off flashlight
+                Console.WriteLine(ex);
             }
         }
 
@@ -83,14 +86,17 @@ namespace Xamarin.Essential_Demo
             catch (FeatureNotSupportedException fnsEx)
             {
                 // Handle not supported on device exception
+                Console.WriteLine(fnsEx);
             }
             catch (PermissionException pEx)
             {
                 // Handle permission exception
+                Console.WriteLine(pEx);
             }
             catch (Exception ex)
             {
                 // Unable to turn on/off flashlight
+                Console.WriteLine(ex);
             }
         }
     }

@@ -75,18 +75,22 @@ namespace Xamarin.Essential_Demo
             catch (FeatureNotSupportedException fnsEx)
             {
                 // Handle not supported on device exception
+                Console.WriteLine(fnsEx);
             }
             catch (FeatureNotEnabledException fneEx)
             {
                 // Handle not enabled on device exception
+                Console.WriteLine(fneEx);
             }
             catch (PermissionException pEx)
             {
                 // Handle permission exception
+                Console.WriteLine(pEx);
             }
             catch (Exception ex)
             {
                 // Unable to get location
+                Console.WriteLine(ex);
             }
         }
 
@@ -106,18 +110,22 @@ namespace Xamarin.Essential_Demo
             catch (FeatureNotSupportedException fnsEx)
             {
                 // Handle not supported on device exception
+                Console.WriteLine(fnsEx);
             }
             catch (FeatureNotEnabledException fneEx)
             {
                 // Handle not enabled on device exception
+                Console.WriteLine(fneEx);
             }
             catch (PermissionException pEx)
             {
                 // Handle permission exception
+                Console.WriteLine(pEx);
             }
             catch (Exception ex)
             {
                 // Unable to get location
+                Console.WriteLine(ex);
             }
         }
     }

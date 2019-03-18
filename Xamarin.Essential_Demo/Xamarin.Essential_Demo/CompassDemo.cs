@@ -78,11 +78,11 @@ namespace Xamarin.Essential_Demo
             }
             catch (FeatureNotSupportedException fnsEx)
             {
-                // Feature not supported on device
+                Console.WriteLine(fnsEx);
             }
             catch (Exception ex)
             {
-                // Other error has occurred.
+                Console.WriteLine(ex);
             }
         }
     }
