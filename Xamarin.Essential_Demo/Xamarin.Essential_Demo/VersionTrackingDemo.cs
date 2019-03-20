@@ -7,8 +7,8 @@ using Xamarin.Forms;
 
 namespace Xamarin.Essential_Demo
 {
-	public class VersionTrackingDemo : ContentPage
-	{
+    public class VersionTrackingDemo : ContentPage
+    {
         private Label title;
         private Label label_firstLaunch;
         private Label label_firstLaunchCurrent;
@@ -60,17 +60,17 @@ namespace Xamarin.Essential_Demo
             var buildHistory = VersionTracking.BuildHistory;
 
             title = new Label { Text = "This is a version tracking demo." };
-            label_firstLaunch = new Label { Text = firstLaunch == null ? "" : firstLaunch.ToString() };
-            label_firstLaunchCurrent = new Label { Text = firstLaunchCurrent == null ? "" : firstLaunchCurrent.ToString() };
-            label_firstLaunchBuild = new Label { Text = firstLaunchBuild == null ? "" : firstLaunchBuild.ToString() };
-            label_currentVersion = new Label { Text = currentVersion == null ? "" : currentVersion.ToString() };
-            label_currentBuild = new Label { Text = currentBuild == null ? "" : currentBuild.ToString() };
-            label_previouosVersion = new Label { Text = previousVersion == null ? "" : previousVersion.ToString() };
-            label_previousBuild = new Label { Text = previousBuild == null ? "" : previousBuild.ToString() };
-            label_firstVersion = new Label { Text = firstVersion == null ? "" : firstVersion.ToString() };
-            label_firstBuild = new Label { Text = firstBuild == null ? "" : firstBuild.ToString() };
-            label_versionHistory = new Label { Text = versionHistory == null ? "" : String.Join(", ", versionHistory) };
-            label_buildHistory = new Label { Text = buildHistory == null ? "" : String.Join(", ", buildHistory) };
+            label_firstLaunch = new Label { Text = "firstLaunch: " + (firstLaunch == null ? "" : firstLaunch.ToString()) };
+            label_firstLaunchCurrent = new Label { Text = "firstLaunchCurrent: " + (firstLaunchCurrent == null ? "" : firstLaunchCurrent.ToString()) };
+            label_firstLaunchBuild = new Label { Text = "firstLaunchBuild: " + (firstLaunchBuild == null ? "" : firstLaunchBuild.ToString()) };
+            label_currentVersion = new Label { Text = "currentVersion: " + (currentVersion == null ? "" : currentVersion.ToString()) };
+            label_currentBuild = new Label { Text = "currentBuild: " + (currentBuild == null ? "" : currentBuild.ToString()) };
+            label_previouosVersion = new Label { Text = "previousVersion: " + (previousVersion == null ? "" : previousVersion.ToString()) };
+            label_previousBuild = new Label { Text = "previousBuild: " + (previousBuild == null ? "" : previousBuild.ToString()) };
+            label_firstVersion = new Label { Text = "firstVersion: " + (firstVersion == null ? "" : firstVersion.ToString()) };
+            label_firstBuild = new Label { Text = "firstBuild: " + (firstBuild == null ? "" : firstBuild.ToString()) };
+            label_versionHistory = new Label { Text = "versionHistory: " + (versionHistory == null ? "" : String.Join(", ", versionHistory)) };
+            label_buildHistory = new Label { Text = "buildHistory: " + (buildHistory == null ? "" : String.Join(", ", buildHistory)) };
 
             Content = new StackLayout
             {
