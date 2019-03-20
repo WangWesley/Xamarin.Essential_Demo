@@ -90,6 +90,7 @@ namespace Xamarin.Essential_Demo
             //listView.SelectedItem = 1;
             this.Detail = f1;
             this.IsPresented = true;
+            this.Title = "Demo";
         }
 
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)

@@ -75,7 +75,7 @@ namespace Xamarin.Essential_Demo
             {
                 Volume = volume,
                 Pitch = pitch,
-                Locale = locale
+             //   Locale = locale ********************************************* dont know how locale works.
             };
 
             await TextToSpeech.SpeakAsync(text, settings);

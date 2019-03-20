@@ -7,8 +7,8 @@ using Xamarin.Forms;
 
 namespace Xamarin.Essential_Demo
 {
-	public class VibrationDemo : ContentPage
-	{
+    public class VibrationDemo : ContentPage
+    {
         private Label title;
         private Label result;
         private Entry entry;
@@ -39,6 +39,7 @@ namespace Xamarin.Essential_Demo
                 {
                     // Use default vibration length
                     Vibration.Vibrate();
+                    Console.WriteLine("Use default vibration length");
                 }
                 else
                 {
@@ -47,6 +48,7 @@ namespace Xamarin.Essential_Demo
                     Double.TryParse(entry.Text, out second);
                     var duration = TimeSpan.FromSeconds(second);
                     Vibration.Vibrate(duration);
+                    Console.WriteLine("Use specified time: " + duration);
                 }
             }
             catch (FeatureNotSupportedException ex)
